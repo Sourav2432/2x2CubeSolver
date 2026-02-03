@@ -28,36 +28,35 @@ public class ColorConverter {
         // URF
         // URF (0)
         assignCorner(cube, 0,
-                f.get("U")[3], f.get("R")[2], f.get("F")[1]);
+                f.get("U")[3], f.get("R")[0], f.get("F")[1]);
 
 // UFL (1)
         assignCorner(cube, 1,
-                f.get("U")[2], f.get("F")[0], f.get("L")[3]);
+                f.get("U")[2], f.get("F")[0], f.get("L")[1]);
 
 // ULB (2)
         assignCorner(cube, 2,
-                f.get("U")[0], f.get("L")[2], f.get("B")[1]);
+                f.get("U")[0], f.get("L")[0], f.get("B")[0]);
 
 // UBR (3)
         assignCorner(cube, 3,
-                f.get("U")[1], f.get("B")[0], f.get("R")[3]);
+                f.get("U")[1], f.get("B")[1], f.get("R")[1]);
 
 // DFR (4)
         assignCorner(cube, 4,
-                f.get("D")[1], f.get("F")[3], f.get("R")[0]);
+                f.get("D")[1], f.get("F")[3], f.get("R")[2]);
 
 // DLF (5)
         assignCorner(cube, 5,
-                f.get("D")[0], f.get("L")[1], f.get("F")[2]);
+                f.get("D")[0], f.get("L")[3], f.get("F")[2]);
 
 // DBL (6)
         assignCorner(cube, 6,
-                f.get("D")[2], f.get("B")[3], f.get("L")[0]);
+                f.get("D")[2], f.get("B")[2], f.get("L")[2]);
 
 // DRB (7)
         assignCorner(cube, 7,
-                f.get("D")[3], f.get("R")[1], f.get("B")[2]);
-
+                f.get("D")[3], f.get("R")[3], f.get("B")[3]);
 
 
         return cube;

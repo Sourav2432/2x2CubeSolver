@@ -45,7 +45,6 @@ public class SolverService {
 
     public String solveFromColors(Map<String, List<String>> faces){
 
-        faces = CubeNormalizer.normalize(faces);
         CubeModel cube = ColorConverter.fromColors(faces);
 
         List<Move> solutionMoves = solver.solve(cube);
@@ -54,5 +53,13 @@ public class SolverService {
                 .map(this::moveToString)
                 .collect(Collectors.joining(" "));
 
+    }
+
+    private String remapMoveString(Move m, Map<String, String> normToOrig) {
+        String s = moveToString(m);
+        String face = s.substring(0, 1);
+        String prime = s.length() > 1 ? "'" : "";
+        String mappedFace = normToOrig.get(face);
+        return mappedFace + prime;
     }
 }

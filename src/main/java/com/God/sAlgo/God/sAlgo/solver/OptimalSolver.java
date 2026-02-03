@@ -20,8 +20,12 @@ public class OptimalSolver {
         solution.clear();
 
         long key = StateEncoder.encode(start);
-        int bound = distanceTable.get(key);
-
+        Integer bound = distanceTable.get(key);
+        if (bound == null) {
+            throw new IllegalStateException(
+                    "State not found in table: " + key
+            );
+        }
         while(true) {
             int t = dfs(start, 0, bound, null);
             if (t == -1) {
